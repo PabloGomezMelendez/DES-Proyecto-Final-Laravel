@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        @if (Route::has('login'))
+        {{-- @if (Route::has('login'))
             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                 @auth
                     <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
@@ -15,7 +15,7 @@
                     @endif
                 @endauth
             </div>
-        @endif
+        @endif --}}
         <div class="row">
             @if (session('status'))
                 <div class="alert alert-success">
@@ -28,11 +28,11 @@
                     <div class="card-header">
                         <h4>
                             Category List
-                            @auth
+                            {{-- @auth --}}
                                 <a href="{{ url('category/create') }}" class="btn btn-primary float-end">Add category</a>
-                            @else
+                            {{-- @else
                                 <button class="btn btn-primary float-end" disabled>Add category </button>
-                            @endauth
+                            @endauth --}}
                         </h4>
                     </div>
                     <div class="card-bodfy">
@@ -61,7 +61,7 @@
                                         <td>{{ $category->description }}</td>
                                         <td>{{ $category->status == 1 ? 'Visible' : 'Hidden' }}</td>
                                         <td>
-                                            @auth
+                                            {{-- @auth --}}
                                                 <a href="{{ route('category.edit', $category->id) }}"
                                                     class="btn btn-sm btn-success">Edit</a>
                                                 <a href="{{ route('category.show', $category->id) }}"
@@ -72,11 +72,11 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                                 </form>
-                                            @else
+                                            {{-- @else
                                                 <button class="btn btn-sm btn-success" disabled>Edit</button>
                                                 <button class="btn btn-sm btn-info" disabled>Show</button>
                                                 <button class="btn btn-sm btn-danger" disabled>Delete</button>
-                                            @endauth
+                                            @endauth --}}
                                         </td>
                                     </tr>
                                 @endforeach
